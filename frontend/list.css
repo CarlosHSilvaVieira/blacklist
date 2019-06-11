@@ -17,9 +17,17 @@
     background-color: white;
     padding: 35px;
     border-radius: 4px;
+    min-width: 820px;
 }
 
 .btn-container {
 
     margin-bottom: 35px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .my-container {
+        min-width: auto;
+    }
 }

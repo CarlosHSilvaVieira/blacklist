@@ -59,7 +59,7 @@ var blockCPF = (cpf) => {
             
             if (result.error) {
                 $('#alert').addClass('alert alert-danger');
-                $("#alert").html(result.error);
+                $("#alert").html(result.error.errmsg);
             }
             else if (result.blocked) {
                 $('#alert').addClass('alert alert-success');
@@ -94,7 +94,7 @@ var freeCPF = (cpf) => {
             
             if (result.error) {
                 $('#alert').addClass('alert alert-danger');
-                $("#alert").html(result.error);
+                $("#alert").html(result.error.errmsg);
             }
             else if (result.free) {
                 $('#alert').addClass('alert alert-success');
@@ -129,7 +129,7 @@ var searchCPF = (cpf) => {
             
             if (result.error) {
                 $('#alert').addClass('alert alert-danger')
-                $("#alert").html(result.error);
+                $("#alert").html(result.error.errmsg);
             }
             else if (result.status === 'FREE') {
                 $('#alert').addClass('alert alert-primary')
