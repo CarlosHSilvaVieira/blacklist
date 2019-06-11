@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as mongoose from 'mongoose'
+import * as cors from 'cors'
 
 import routes from './routes'
 
@@ -24,6 +25,9 @@ class App {
     }
 
     private config() {
+
+        //Cors
+        this.app.use(cors())
 
         // Accepting Application/json
         this.app.use(bodyParser.json())

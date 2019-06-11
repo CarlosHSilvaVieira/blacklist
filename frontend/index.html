@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+
+    <!--Action-->
+    <script src="./action.js"></script>
+    <link rel="stylesheet" href="./list.css">
+
+    <title>BlacklistCPF</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row my-row">
+
+            <div class="my-container">
+                <h5>Blacklist CPF</h5>
+                <div class="form-group">
+                    <label for="inputCPF">CPF</label>
+                    <input type="text" class="form-control" id="inputCPF" />
+                </div>
+                <div class="btn-container">
+                    <div class="form-group">
+                        <button id="btnConsultar" type="button" class="btn btn-secondary btn-block">Consultar</button>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnRemover" type="button" class="btn btn-danger btn-block">Remover da Blacklist</button>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnInserir" type="button" class="btn btn-primary btn-block">Inserir na Blacklist</button>
+                    </div>
+                    <div class="form-group">
+                            <button id="btnLimpar" type="button" class="btn btn-warning btn-block">Limpar</button>
+                        </div>
+                </div>
+                <div id="alert" class="hidden" role="alert">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
