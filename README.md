@@ -22,6 +22,7 @@ Execute o comando abaixo para instalar as dependencias do sistema
 
 Esta seção define a estrutura de pastas e arquivos do projeto
 
+- frontend
 - src
     - controllers
         - blacklist
@@ -58,6 +59,10 @@ Esta seção define a estrutura de pastas e arquivos do projeto
     ### utils
 
     Nessa pasta ficam os arquivos que exportam as variaveis globais do sistema
+
+    ### frontend
+
+    Nessa pasta fica a página html para utilização do serviço via interface web
 
 ## Principais Dependencias
 
