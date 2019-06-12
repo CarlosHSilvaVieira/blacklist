@@ -1,5 +1,12 @@
 # Maxmilhas Teste
 
+## Observações
+
+Para o correto funcionamento da aplicação é necessário que se tenha uma instância do MongoDB sendo
+executada localmente
+
+Nome do banco de dados: CPFChecker
+
 ## GitHub
 
 `<link>`: https://github.com/CarlosHSilvaVieira/blacklist
