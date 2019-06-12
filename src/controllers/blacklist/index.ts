@@ -5,13 +5,16 @@ import ServerVariables from '../../utils/serverVariables'
 class BlacklistController {
 
     constructor() {
+        this.checkBlacklist = this.checkBlacklist.bind(this)
+        this.insertInBlacklist = this.insertInBlacklist.bind(this)
+        this.removeFromBlacklist = this.removeFromBlacklist.bind(this)
     }
 
     checkBlacklist(req: Request, res: Response, next: NextFunction) {
 
         const requestCpf = req.params.cpf
 
-        if (!requestCpf) { return res.status(400).json({ status: '', error: 'CPF não fornecido' }) }
+        if (!this.validateCpf(requestCpf)) { return res.status(400).json({ status: '', error: 'CPF não fornecido' }) }
 
         BlackListModel.findOne({ cpf: requestCpf }, (error, targetCpf) => {
 
@@ -37,7 +40,7 @@ class BlacklistController {
 
         const target = req.body
 
-        if (!target || !target.cpf || target.cpf === '') { return res.status(400).json({ blocked: false, error: 'CPF não fornecido' }) }
+        if (!target || !target.cpf || !this.validateCpf(target.cpf)) { return res.status(400).json({ blocked: false, error: 'CPF não fornecido' }) }
 
         const blacklistCpf = new BlackListModel(target)
         blacklistCpf.save((error, saved) => {
@@ -55,7 +58,7 @@ class BlacklistController {
 
         const requestCpf = req.params.cpf
 
-        if (!requestCpf) { return res.status(400).json({ free: false, error: 'CPF não fornecido' }) }
+        if (!this.validateCpf(requestCpf)) { return res.status(400).json({ free: false, error: 'CPF não fornecido' }) }
 
         BlackListModel.findOneAndRemove({ cpf: requestCpf }, (error, targetCpf) => {
 
@@ -74,6 +77,16 @@ class BlacklistController {
         const count = await count_async
 
         return count
+    }
+
+    private validateCpf(cpf: string) {
+
+        if (!cpf || cpf === '' || cpf.length != 11) {
+            return false
+        }
+        else {
+            return true
+        }
     }
 }
 
